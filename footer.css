@@ -1,0 +1,109 @@
+/* Make the entire page layout use flexbox */
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* This allows the content to take up available space */
+    padding: 20px;
+}
+
+h1, p {
+    margin: 0 0 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.scroll-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.scroll-content {
+    display: inline-flex;
+    align-items: center;
+    animation: scroll 20s linear infinite;
+}
+
+.scroll-content p {
+    margin: 0 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.scroll-content a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Icon Images */
+.fb-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg');
+}
+
+.ig-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
+}
+
+.li-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg');
+}
+
+.tw-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg');
+}
+
+.pi-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png');
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Sticky footer: make sure the footer is always at the bottom */
+footer {
+    flex-shrink: 0; /* Keeps footer from shrinking and ensures it's placed at the bottom */
+}
